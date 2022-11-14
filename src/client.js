@@ -171,7 +171,7 @@ class MumbleClient extends EventEmitter {
 
   _error (reason) {
     this.emit('error', reason)
-    this.disconnect()
+    // this.disconnect()
   }
 
   _send (msg) {
