@@ -663,6 +663,18 @@ class MumbleClient extends EventEmitter {
     })
   }
 
+  sendPluginData(receiverSessions, dataID, data) {
+    this._send({
+      name: 'PluginDataTransmission',
+      payload: {
+        senderSession: this.self._id,
+        receiverSessions,
+        dataID,
+        data
+      }
+    })
+  }
+
   getChannelById (id) {
     return this._channelById[id]
   }
